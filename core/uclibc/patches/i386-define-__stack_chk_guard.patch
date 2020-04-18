@@ -1,0 +1,17 @@
+--- a/libpthread/nptl/sysdeps/i386/tls.h	2020-04-17 20:00:49.772519859 +0000
++++ b/libpthread/nptl/sysdeps/i386/tls.h	2020-04-17 20:01:33.855141557 +0000
+@@ -422,14 +422,6 @@
+ 	      abort (); })
+ 
+ 
+-/* Set the stack guard field in TCB head.  */
+-#define THREAD_SET_STACK_GUARD(value) \
+-  THREAD_SETMEM (THREAD_SELF, header.stack_guard, value)
+-#define THREAD_COPY_STACK_GUARD(descr) \
+-  ((descr)->header.stack_guard						      \
+-   = THREAD_GETMEM (THREAD_SELF, header.stack_guard))
+-
+-
+ /* Set the pointer guard field in the TCB head.  */
+ #define THREAD_SET_POINTER_GUARD(value) \
+   THREAD_SETMEM (THREAD_SELF, header.pointer_guard, value)
