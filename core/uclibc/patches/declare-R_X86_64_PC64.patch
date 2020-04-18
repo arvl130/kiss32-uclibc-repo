@@ -1,0 +1,16 @@
+Linux kernel 5.4.24 expects that R_X86_64_PC64 is declared in include/elf.h.
+This patch adds this missing definition to uClibc and fixes header installation
+for the kernel.
+
+--- a/include/elf.h
++++ b/include/elf.h
+@@ -3034,7 +3034,8 @@
+ 					   to GOT entry for IE symbol */
+ #define R_X86_64_TPOFF32	23	/* Offset in initial TLS block */
+ 
+-#define R_X86_64_NUM		24
++#define R_X86_64_PC64		24	/* PC relative 64 bit */
++#define R_X86_64_NUM		25
+ 
+ 
+ /* AM33 relocations.  */
