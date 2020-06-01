@@ -45,7 +45,6 @@ export libat_cv_have_ifunc=no
     --without-included-gettext \
     --with-system-zlib \
     --build=i686-pc-linux-uclibc \
-    --disable-bootstrap \
     "${bootstrap:---enable-bootstrap}"
 
 make
